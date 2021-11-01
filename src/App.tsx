@@ -1,16 +1,13 @@
 import { useState } from "react";
 
-import { Box, Button, ChakraProvider, useColorMode } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
-import theme from "./theme";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box>
-      <Button colorScheme="teal" variant="solid" onClick={toggleColorMode}>
-        {colorMode}
-      </Button>
+      <NavBar />
     </Box>
   );
 }
