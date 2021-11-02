@@ -12,6 +12,7 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.24.0",
     "framer-motion": "^4.1.17",
     "history": "^5.0.1",
     "react": "^17.0.0",
