@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { LoginResponse } from '../../types'
+import { RootState } from '../store'
+import { authenticationApi } from './authenticationApi'
 
 const initialState: LoginResponse = {
   isAuthenticated: null,
@@ -33,6 +35,8 @@ const authenticationSlice = createSlice({
 
 const { reducer, actions } = authenticationSlice
 
-const { loginUser, logoutUser } = actions
+export const { loginUser, logoutUser } = actions
+
+export const userSelector = (state: RootState) => state.authentication.user
 
 export default reducer
