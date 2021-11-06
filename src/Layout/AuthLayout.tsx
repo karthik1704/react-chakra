@@ -8,7 +8,11 @@ interface Props {}
 
 const AuthLayout = ({}: Props): ReactElement => {
   return (
-    <Box>
+    <Box
+      w="100%"
+      h="100vh"
+      bgGradient="linear(to-r, whiteAlpha.100, purple.300)"
+    >
       <Outlet />
     </Box>
   )
