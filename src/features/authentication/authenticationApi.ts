@@ -6,7 +6,7 @@ export const authenticationApi = createApi({
   reducerPath: 'authenticationApi',
   baseQuery: axiosBaseQuery({ baseUrl: 'www.example.com/' }),
   endpoints: (builder) => ({
-    login: builder.mutation<ILogin, LoginResponse>({
+    login: builder.mutation<LoginResponse, ILogin>({
       query: (data) => ({
         url: 'login/',
         method: 'POST',
@@ -14,7 +14,7 @@ export const authenticationApi = createApi({
       }),
     }),
 
-    register: builder.mutation<IRegister, LoginResponse>({
+    register: builder.mutation<LoginResponse, IRegister>({
       query: (data) => ({
         url: 'register/',
         method: 'POST',
