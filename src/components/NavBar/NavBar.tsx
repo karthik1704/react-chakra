@@ -8,15 +8,22 @@ import {
   IconButton,
   Icon,
   Link,
+  Avatar,
 } from '@chakra-ui/react'
 
 import { Link as RouteLink } from 'react-router-dom'
 
-import { MoonIcon } from '@chakra-ui/icons'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { AiFillGithub } from 'react-icons/ai'
+import { useAppSelector } from '../../hooks/useRtk'
+import { userSelector } from '../../features/authentication/authenticationSlice'
 
 const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+
+  const { isAuthenticated, user } = useAppSelector(
+    (state) => state.authentication
+  )
 
   return (
     <Flex
@@ -37,16 +44,20 @@ const NavBar = () => {
         <Button colorScheme="teal" variant="link" as={RouteLink} to="/">
           Home
         </Button>
-        <Button colorScheme="teal" variant="link" as={RouteLink} to="/about">
+        <Button colorScheme="teal" variant="link" as={RouteLink} to="about">
           About
         </Button>
-        <Button colorScheme="teal" variant="solid" as={RouteLink} to="login">
-          Login
-        </Button>
+        {isAuthenticated ? (
+          <Avatar name={user?.firstName} src={user?.avatar} />
+        ) : (
+          <Button colorScheme="teal" variant="solid" as={RouteLink} to="login">
+            Login
+          </Button>
+        )}
         <Box mr={1}>
           <IconButton
             variant="ghost"
-            icon={<MoonIcon />}
+            icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             aria-label="theme toggle"
             onClick={toggleColorMode}
           />
