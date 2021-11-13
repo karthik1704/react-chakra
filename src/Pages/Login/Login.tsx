@@ -114,6 +114,8 @@ const Login = (props: Props): ReactElement => {
             isLoading={formik.isSubmitting}
             colorScheme="blue"
             isFullWidth
+            as={Link}
+            to="/register"
           >
             Create Account
           </Button>
