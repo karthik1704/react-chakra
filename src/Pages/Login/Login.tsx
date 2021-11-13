@@ -45,7 +45,7 @@ const Login = (props: Props): ReactElement => {
     },
   })
   return (
-    <Flex align="center" justify="center" direction="column" minH="600px">
+    <Flex align="center" justify="center" direction="column" minH="100vh">
       <Box bgColor="transparent" shadow="xl" m="2" p="8" rounded="md">
         <Flex>
           <IconButton

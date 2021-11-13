@@ -28,7 +28,7 @@ const RegisterSchema = Yup.object().shape({
   firstName: Yup.string()
     .required('First Name Required')
     .min(4, '4 latter above'),
-  firstName: Yup.string(),
+  lastName: Yup.string(),
   email: Yup.string().email('Invalid E-mail').required('E-mail Required'),
   password1: Yup.string()
     .min(8, 'Password min 8 character')
@@ -60,7 +60,7 @@ const Register = (props: Props): ReactElement => {
   })
 
   return (
-    <Flex align="center" justify="center" direction="column" minH="600px">
+    <Flex align="center" justify="center" direction="column" minH="100vh">
       <Box bgColor="transparent" shadow="xl" m="2" p="8" rounded="md">
         <Flex>
           <IconButton
